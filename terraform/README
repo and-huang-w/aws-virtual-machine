@@ -1,1 +1,17 @@
-isso é um teste
+provider "aws" {
+  region                   = "us-east-1"
+  shared_config_files      = [".aws/config"]
+  shared_credentials_files = [".aws/credentials"]
+  profile                  = "iac"
+}
+
+.aws/config
+[profile iac]
+region = us-east-1
+output = json
+
+.aws/credentials
+[iac]
+aws_access_key_id=
+aws_secret_access_key=
+aws_session_token=
